@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Past Work | Web Design Portfolio | Secret Systems .io</title>
+<meta name="description" content="Browse Secret Systems' portfolio of web design, CRM builds, automation systems, and landing pages. View our past work and request your own custom website."/>
+<meta name="keywords" content="Secret Systems portfolio, web design work, website examples, GoHighLevel builds, landing page examples, Louisiana web design portfolio"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://secretsystems.io/work.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://secretsystems.io/work.html"/>
+<meta property="og:title" content="Past Work | Secret Systems .io"/>
+<meta property="og:description" content="Our portfolio of websites, funnels, CRMs, and automation systems. See what we build — then request yours."/>
+<meta property="og:site_name" content="Secret Systems .io"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Past Work | Secret Systems .io"/>
+<meta name="twitter:description" content="Browse Secret Systems web design and automation portfolio. Then request your own."/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"Secret Systems Portfolio","url":"https://secretsystems.io/work.html","description":"Portfolio of web design, automation systems, and CRM builds by Secret Systems LLC.","isPartOf":{"@type":"WebSite","name":"Secret Systems .io","url":"https://secretsystems.io"}}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+/* ════════════════════════════════════════
+   ROOT & BASE
+════════════════════════════════════════ */
+:root{
+  --void:#020408; --deep:#070d14; --card:#0f1c2a;
+  --border:rgba(0,200,255,0.12); --cyan:#00c8ff; --cyan2:#00ffe0;
+  --cyan-glow:rgba(0,200,255,0.10); --white:#e8f4ff;
+  --muted:#4a6a82; --text:#a8c8e0;
+  --header-height:4.5rem;
+  --padding:1rem;
+  /* card layout vars — matched to anime.js */
+  --w:180px; --h:140px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{height:100%;}
+body{
+  background:var(--void);color:var(--white);
+  font-family:'Outfit',sans-serif;
+  overflow:hidden; /* scene is 3D, page scroll handled differently */
+  cursor:none;
+  user-select:none;
+  min-height:100lvh;
+  display:flex;flex-direction:column;
+  perspective:1200px;
+}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.03) 2px,rgba(0,0,0,.03) 4px);pointer-events:none;z-index:9997;}
+
+/* ════════════════════════════════════════
+   CURSOR
+════════════════════════════════════════ */
+#cursor{position:fixed;width:10px;height:10px;background:var(--cyan);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);mix-blend-mode:screen;transition:width .2s,height .2s;box-shadow:0 0 10px rgba(0,200,255,.5);}
+#cursor-ring{position:fixed;width:32px;height:32px;border:1px solid rgba(0,200,255,.35);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);}
+
+/* ════════════════════════════════════════
+   NAV
+════════════════════════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 2.5rem;
+  height:var(--header-height);
+  background:rgba(2,4,8,.92);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--white);text-decoration:none;letter-spacing:.05em;}
+.nav-logo .dot{color:var(--cyan);}
+.nav-logo .io{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--cyan);opacity:.8;font-weight:300;}
+.nav-links{display:flex;gap:1.6rem;list-style:none;align-items:center;}
+.nav-links a{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text);text-decoration:none;transition:color .2s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--cyan);transform:scaleX(0);transform-origin:left;transition:transform .25s;}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan);}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+.nav-cta{border:1px solid var(--cyan)!important;color:var(--cyan)!important;padding:.42rem 1.2rem;font-weight:600!important;transition:background .2s!important,color .2s!important;}
+.nav-cta:hover{background:var(--cyan)!important;color:var(--void)!important;}
+.nav-cta::after{display:none!important;}
+@media(max-width:768px){.nav-links{display:none;}}
+
+/* ════════════════════════════════════════
+   CONTROLS  (layout toggle bar)
+════════════════════════════════════════ */
+.controls{
+  position:fixed;z-index:500;
+  bottom:2rem;left:50%;transform:translateX(-50%);
+  display:flex;align-items:center;gap:.5rem;
+  background:rgba(2,4,8,.85);
+  backdrop-filter:blur(16px);
+  border:1px solid var(--border);
+  padding:.5rem .7rem;
+}
+.controls button{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.65rem;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;
+  background:transparent;
+  border:1px solid rgba(0,200,255,.15);
+  color:var(--muted);
+  padding:.45rem 1rem;
+  cursor:pointer;
+  transition:all .2s;
+}
+.controls button:hover{border-color:rgba(0,200,255,.4);color:var(--cyan);}
+.controls button.is-active{background:var(--cyan);color:var(--void);border-color:var(--cyan);font-weight:700;}
+/* separator */
+.sep{width:1px;height:24px;background:var(--border);}
+/* request button */
+.req-btn{
+  font-family:'Syne',sans-serif !important;
+  font-weight:700 !important;
+  background:rgba(0,200,255,.1) !important;
+  border:1px solid var(--cyan) !important;
+  color:var(--cyan) !important;
+  letter-spacing:.08em !important;
+  font-size:.7rem !important;
+}
+.req-btn:hover{background:var(--cyan) !important;color:var(--void) !important;}
+
+/* ════════════════════════════════════════
+   3D SCENE
+════════════════════════════════════════ */
+#scene{
+  position:fixed;
+  transform-style:preserve-3d;
+  top:0;left:0;width:100%;height:100%;
+  padding:var(--header-height) var(--padding) 6rem;
+  inset:0;
+}
+#scene-content{
+  pointer-events:none;
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  transform-style:preserve-3d;
+  backface-visibility:hidden;
+}
+#scene-content[data-layout="table"]{
+  display:grid;
+  grid-template-columns:repeat(5, var(--w));
+  grid-auto-rows:var(--h);
+  gap:.5rem;
+  place-content:center;
+  padding-top:var(--header-height);
+}
+
+/* ════════════════════════════════════════
+   PROJECT CARDS
+════════════════════════════════════════ */
+.element{
+  overflow:hidden;
+  pointer-events:auto;
+  position:relative;
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+  width:var(--w);height:var(--h);
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:3px;
+  padding:.75rem;
+  transform-style:preserve-3d;
+  z-index:8;
+  cursor:pointer;
+  transition:border-color .2s,background .2s;
+  text-align:left;
+}
+.element::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--color-a),var(--color-b));
+  opacity:0;transition:opacity .3s;
+}
+.element:hover,.element:focus-visible{
+  border-color:rgba(0,200,255,.4);
+  background:#121f2d;
+  outline:none;
+}
+.element:hover::before{opacity:1;}
+
+/* category color themes */
+.element[data-color="0"]{--color-a:#00c8ff;--color-b:#00ffe0;}  /* web */
+.element[data-color="1"]{--color-a:#c9a84c;--color-b:#f0c060;}  /* crm */
+.element[data-color="2"]{--color-a:#ff2244;--color-b:#ff6060;}  /* automation */
+.element[data-color="3"]{--color-a:#00ff88;--color-b:#00c860;}  /* funnel */
+.element[data-color="4"]{--color-a:#a855f7;--color-b:#c084fc;}  /* marketing */
+
+.element.is-expanded{
+  --w:320px; --h:280px;
+  z-index:100;
+  padding:1.2rem;
+}
+
+/* card sub-elements */
+.element-number{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.52rem;color:var(--muted);letter-spacing:.1em;
+  align-self:flex-end;
+}
+.element.is-expanded .element-number{position:absolute;top:1rem;right:1rem;font-size:.65rem;}
+
+.element-tag{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--color-a);
+  margin-bottom:.2rem;
+}
+.element-symbol{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:1.4rem;line-height:1;color:var(--white);
+  letter-spacing:-.02em;
+}
+.element.is-expanded .element-symbol{font-size:1rem;font-weight:700;margin-bottom:.2rem;}
+
+.element-title{
+  font-family:'Outfit',sans-serif;font-weight:500;
+  font-size:.6rem;color:var(--text);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.element.is-expanded .element-title{font-size:1.2rem;font-weight:700;color:var(--white);white-space:normal;margin:.4rem 0 .6rem;line-height:1.2;}
+
+.element-description{
+  display:none;
+  font-size:.7rem;color:var(--text);line-height:1.6;
+  margin-top:.5rem;
+}
+.element.is-expanded .element-description{display:block;}
+
+.element-link{
+  display:none;
+  margin-top:.8rem;
+  font-family:'JetBrains Mono',monospace;font-size:.6rem;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--cyan);text-decoration:none;
+  transition:letter-spacing .2s;
+}
+.element-link:hover{letter-spacing:.15em;}
+.element.is-expanded .element-link{display:inline-flex;align-items:center;gap:.4rem;}
+.element-link::after{content:'→';}
+
+/* 3D positioned layouts */
+#scene-content[data-layout="sphere"] .element,
+#scene-content[data-layout="helix"] .element,
+#scene-content[data-layout="grid"] .element{
+  position:absolute;left:50%;top:50%;
+  margin-left:calc(var(--w) * -.5);
+  margin-top:calc(var(--h) * -.5);
+}
+#scene-content[data-layout="table"] .element.is-expanded{
+  position:relative;
+  margin-right:calc(var(--w) * -1);
+  margin-bottom:calc(var(--h) * -.5);
+}
+
+/* ════════════════════════════════════════
+   PAGE HERO (above the 3D scene)
+════════════════════════════════════════ */
+#hero-banner{
+  position:fixed;top:var(--header-height);left:0;right:0;
+  z-index:400;
+  padding:1.2rem 2.5rem .8rem;
+  background:linear-gradient(180deg,rgba(2,4,8,.95) 70%,transparent);
+  pointer-events:none;
+}
+.hero-eyebrow{
+  font-family:'JetBrains Mono',monospace;font-size:.65rem;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--cyan);
+  display:flex;align-items:center;gap:.7rem;margin-bottom:.4rem;
+}
+.hero-eyebrow::before{content:'';display:block;width:18px;height:1px;background:var(--cyan);}
+.hero-title{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:clamp(1.6rem,3vw,2.5rem);line-height:1;
+  letter-spacing:-.02em;
+}
+.hero-title span{color:var(--cyan);}
+.hero-sub{font-size:.82rem;color:var(--text);margin-top:.4rem;max-width:500px;}
+
+/* ════════════════════════════════════════
+   REQUEST MODAL
+════════════════════════════════════════ */
+#modal-overlay{
+  position:fixed;inset:0;z-index:2000;
+  background:rgba(0,0,0,.75);backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+}
+#modal-overlay.open{opacity:1;pointer-events:all;}
+
+#modal{
+  background:linear-gradient(145deg,#080e18,#04090f);
+  border:1px solid var(--border);
+  width:min(560px,92vw);max-height:88vh;
+  overflow-y:auto;
+  padding:2.5rem;position:relative;
+  transform:translateY(20px) scale(.97);
+  transition:transform .35s cubic-bezier(.4,0,.2,1);
+}
+#modal-overlay.open #modal{transform:translateY(0) scale(1);}
+#modal::before{content:'';position:absolute;top:-1px;left:-1px;width:28px;height:28px;border-top:2px solid var(--cyan);border-left:2px solid var(--cyan);}
+#modal::after{content:'';position:absolute;bottom:-1px;right:-1px;width:28px;height:28px;border-bottom:2px solid var(--cyan);border-right:2px solid var(--cyan);}
+
+.modal-close{
+  position:absolute;top:1rem;right:1rem;
+  background:none;border:none;color:var(--muted);font-size:1.2rem;
+  cursor:pointer;transition:color .2s;
+}
+.modal-close:hover{color:var(--white);}
+.modal-ey{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cyan);margin-bottom:.6rem;}
+.modal-h{font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;margin-bottom:.4rem;}
+.modal-sub{font-size:.82rem;color:var(--text);margin-bottom:1.8rem;line-height:1.6;}
+
+.fg{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem;}
+.fg label{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
+.fg input,.fg textarea,.fg select{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(0,200,255,.12);
+  color:var(--white);
+  font-family:'Outfit',sans-serif;font-size:.88rem;
+  padding:.75rem 1rem;outline:none;
+  transition:border-color .2s;width:100%;
+}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--cyan);background:rgba(0,200,255,.025);}
+.fg select option{background:var(--deep);}
+.fg textarea{resize:vertical;min-height:100px;}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.modal-submit{
+  width:100%;background:var(--cyan);color:var(--void);
+  font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;
+  letter-spacing:.1em;text-transform:uppercase;
+  border:none;padding:.9rem;cursor:pointer;
+  transition:background .2s,transform .15s;margin-top:.5rem;
+}
+.modal-submit:hover{background:var(--cyan2);transform:translateY(-1px);}
+.modal-success{display:none;text-align:center;padding:2rem 1rem;}
+.modal-success h3{font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;color:var(--cyan);margin-bottom:.8rem;}
+.modal-success p{font-size:.88rem;color:var(--text);line-height:1.7;}
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Secret Systems<span class="dot">.</span><span class="io">io</span></a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="automation.html">AI &amp; Automation</a></li>
+    <li><a href="catalog.html">Catalog</a></li>
+    <li><a href="work.html" class="active">Past Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="contact.html" class="nav-cta">Get Access</a></li>
+  </ul>
+</nav>
+
+<!-- HERO BANNER -->
+<div id="hero-banner">
+  <p class="hero-eyebrow">Portfolio</p>
+  <h1 class="hero-title">Past <span>Work</span></h1>
+  <p class="hero-sub">Click any card to expand. Toggle layout. Each card is a real build — websites, funnels, CRMs, and automation systems.</p>
+</div>
+
+<!-- LAYOUT CONTROLS -->
+<div class="controls">
+  <button class="is-active toggle" id="table">Table</button>
+  <button class="toggle" id="sphere">Sphere</button>
+  <button class="toggle" id="helix">Helix</button>
+  <button class="toggle" id="grid">Grid</button>
+  <div class="sep"></div>
+  <button class="req-btn" id="open-request">Request a Site →</button>
+</div>
+
+<!-- 3D SCENE -->
+<div id="scene">
+  <div id="scene-content" data-layout="table"></div>
+</div>
+
+<!-- CARD TEMPLATE -->
+<template id="element">
+  <button class="element" data-color="0">
+    <div class="element-number"></div>
+    <div class="element-tag"></div>
+    <div class="element-symbol"></div>
+    <div class="element-title"></div>
+    <div class="element-description"></div>
+    <a class="element-link" href="#" target="_blank" rel="noopener"></a>
+  </button>
+</template>
+
+<!-- REQUEST MODAL -->
+<div id="modal-overlay">
+  <div id="modal">
+    <button class="modal-close" id="modal-close">✕</button>
+    <div id="modal-form-wrap">
+      <p class="modal-ey">Secret Systems // New Project Request</p>
+      <h2 class="modal-h">Request Your Website</h2>
+      <p class="modal-sub">Tell us about your project. We'll build a custom proposal and reach out within 24 hours.</p>
+      <form id="req-form" onsubmit="submitRequest(event)" novalidate>
+        <div class="fg-row">
+          <div class="fg"><label>First Name *</label><input type="text" name="fname" placeholder="John" required/></div>
+          <div class="fg"><label>Last Name *</label><input type="text" name="lname" placeholder="Smith" required/></div>
+        </div>
+        <div class="fg"><label>Business Name *</label><input type="text" name="biz" placeholder="Your Company LLC" required/></div>
+        <div class="fg-row">
+          <div class="fg"><label>Phone *</label><input type="tel" name="phone" placeholder="(555) 000-0000" required/></div>
+          <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="you@company.com" required/></div>
+        </div>
+        <div class="fg">
+          <label>Type of Project *</label>
+          <select name="type" required>
+            <option value="">Select project type...</option>
+            <option>Business Website (5–10 pages)</option>
+            <option>Landing Page / Lead Funnel</option>
+            <option>E-commerce Store</option>
+            <option>GoHighLevel CRM Build</option>
+            <option>Portfolio / Personal Brand</option>
+            <option>Custom Web Application</option>
+            <option>Complete Digital System (Website + CRM + Automation)</option>
+            <option>Other — let's talk</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Budget Range</label>
+          <select name="budget">
+            <option value="">Select range...</option>
+            <option>Under $1,000</option>
+            <option>$1,000 – $3,000</option>
+            <option>$3,000 – $7,500</option>
+            <option>$7,500+</option>
+            <option>Monthly retainer preferred</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Tell Us About Your Project *</label>
+          <textarea name="desc" placeholder="What does your business do? What do you need the site to accomplish? Any examples you love?" required></textarea>
+        </div>
+        <button type="submit" class="modal-submit">Send My Request →</button>
+      </form>
+    </div>
+    <div class="modal-success" id="modal-success">
+      <div style="font-size:2.5rem;margin-bottom:1rem;">✅</div>
+      <h3>Request Received!</h3>
+      <p>We'll review your project details and reach out within 24 hours to discuss next steps.<br/><br/>In the meantime, browse our <a href="catalog.html" style="color:var(--cyan);">service catalog</a> or <a href="pricing.html" style="color:var(--cyan);">pricing plans</a>.</p>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+/* ════════════════════════════════════════════════
+   IMPORTS — anime.js v4
+════════════════════════════════════════════════ */
+import { createLayout, utils, stagger, spring, createTimer, createAnimatable }
+  from 'https://esm.sh/animejs@4.3.0';
+
+/* ════════════════════════════════════════════════
+   PROJECT DATA
+   Format: tag, symbol (short code), title, color(0-4), description, url
+   color: 0=web(cyan) 1=crm(gold) 2=auto(red) 3=funnel(green) 4=mktg(purple)
+
+   HOW TO ADD YOUR OWN:
+   Add a new entry to PROJECTS array below.
+   Each entry maps to one card in the grid.
+   Assign url to the actual live page URL.
+   GitHub Actions or a simple JSON file can auto-populate this array.
+════════════════════════════════════════════════ */
+const PROJECTS = [
+  // [tag, code, title, color, description, url]
+  ['Website','TM','Taylor Made Land Services',0,'Custom single-file black & orange industrial website for a South Louisiana land clearing and dirt work company. Mobile-first, SEO-ready.','#'],
+  ['Funnel','LG','Lead Gen Landing Page',3,'High-converting lead capture funnel for a roofing contractor — Facebook Ads → form → CRM → AI SMS in 60s. 3× booking rate.','#'],
+  ['CRM Build','GHL','GoHighLevel Full Setup',1,'Complete GHL CRM for an HVAC company — pipelines, stage automations, appointment reminders, and review request sequences.','#'],
+  ['Automation','AR','AI Review Engine',2,'Automated 5-star review generator for a med spa. 14 reviews → 97 in 60 days. SMS + email with smart negative filter.','#'],
+  ['Website','SP','Med Spa Brand Site',0,'Premium medical spa website — booking integration, gallery, service pages, and SEO-optimized local landing pages.','#'],
+  ['CRM Build','PL','Pipeline Automation',1,'Custom CRM pipeline automation for a real estate investor — lead capture, tag-based routing, and weekly reporting dashboard.','#'],
+  ['Funnel','RF','Roofing Lead Funnel',3,'Multi-step funnel for a storm damage roofing company. Facebook ad → VSL page → estimate form → AI follow-up sequence.','#'],
+  ['Automation','MD','Missed Call Text-Back',2,'Instant missed-call SMS system deployed for a plumbing company. Every missed call triggers AI conversation within 3 seconds.','#'],
+  ['Website','HC','HVAC Pro Site',0,'10-page HVAC contractor website with booking calendar, service area pages, emergency CTA bar, and GHL integration.','#'],
+  ['Marketing','FB','Meta Ad Campaign',4,'Facebook & Instagram ad management for a dental clinic. $2,400/mo spend → 48 new patient bookings in first month.','#'],
+  ['Funnel','CB','Coaching Opt-In Funnel',3,'Simple opt-in → video → application funnel for a business coach. 38% opt-in rate on cold traffic.','#'],
+  ['Automation','DD','Auto-Dial Follow-Up',2,'Automated outbound dialing system for a solar company — 200-contact lists worked daily, voicemail drops + SMS follow-up.','#'],
+  ['Website','FL','Flooring Co Website',0,'Custom flooring company website with quote calculator, gallery with before/after slider, and Google review widget.','#'],
+  ['CRM Build','RS','Reputation Stack',1,'GoHighLevel reputation management system — review requests, monitoring alerts, AI reply suggestions, and weekly PDF reports.','#'],
+  ['Funnel','WL','Webinar Funnel',3,'Webinar registration → confirmation → reminder sequence → replay page. Built on GHL with 62% registration completion rate.','#'],
+  ['Marketing','SE','Local SEO Package',4,'Full local SEO setup for a landscaping company — GBP optimization, 45 citation builds, schema markup, and monthly reporting.','#'],
+  ['Website','LA','Law Firm Site',0,'Professional attorney website — practice area pages, attorney bios, consultation booking, and live chat widget.','#'],
+  ['Automation','TX','SMS Blast System',2,'Monthly SMS blast system for a restaurant group — promotions, re-engagement sequences, and birthday automations.','#'],
+  ['CRM Build','NK','New Client Onboarding',1,'GHL workflow automating new client onboarding — welcome sequence, document collection, task assignment, and follow-up nudges.','#'],
+  ['Website','PT','Physical Therapy Site',0,'PT clinic site with insurance verification form, appointment booking, staff pages, and patient testimonial carousel.','#'],
+];
+
+/* ════════════════════════════════════════════════
+   BUILD CARDS
+════════════════════════════════════════════════ */
+const $content = utils.$('#scene-content')[0];
+const $tpl = utils.$('#element')[0];
+
+PROJECTS.forEach(([tag, code, title, color, desc, url], i) => {
+  const $el = $tpl.content.cloneNode(true);
+  const $card = $el.querySelector('.element');
+  $card.querySelector('.element-number').textContent = String(i+1).padStart(2,'0');
+  $card.querySelector('.element-tag').textContent = tag;
+  $card.querySelector('.element-symbol').textContent = code;
+  $card.querySelector('.element-title').textContent = title;
+  $card.querySelector('.element-description').textContent = desc;
+  $card.dataset.color = color;
+  const $link = $card.querySelector('.element-link');
+  $link.href = url;
+  $link.textContent = url === '#' ? 'Coming Soon' : 'View Live Site';
+  if(url==='#') $link.style.pointerEvents='none';
+  $content.appendChild($el);
+});
+
+const cards = utils.$('#scene-content .element');
+
+/* ════════════════════════════════════════════════
+   LAYOUT ENGINE
+════════════════════════════════════════════════ */
+const elementsLayout = createLayout($content, {
+  properties: ['font-size'],
+  duration: 1800,
+  ease: 'inOutExpo',
+});
+
+/* camera parallax with mouse */
+const sceneAnim = createAnimatable('#scene', { rotateX: 200, rotateY: 200 });
+const ptr = { x:0, y:0, rotateX:12, rotateY:16, rx:0, ry:0 };
+
+createTimer({
+  onUpdate: () => {
+    ptr.rx = utils.lerp(ptr.rx, ptr.rotateX, .012);
+    ptr.ry = utils.lerp(ptr.ry, ptr.rotateY, .012);
+    sceneAnim.rotateX(ptr.y * ptr.rx);
+    sceneAnim.rotateY(ptr.x * ptr.ry);
+  }
+});
+
+document.addEventListener('pointermove', e => {
+  const hw = window.innerWidth * .5, hh = window.innerHeight * .5;
+  ptr.x = utils.mapRange(e.clientX - hw, -hw, hw, 1, -1);
+  ptr.y = utils.mapRange(e.clientY - hh, -hh, hh, -1, 1);
+});
+
+/* layout transforms */
+const layouts = {
+  table: () => {
+    ptr.rotateX = 12; ptr.rotateY = 16;
+    cards.forEach($el => {
+      $el.style.opacity = 1;
+      $el.style.transform = $el.classList.contains('is-expanded') ? 'translateZ(60px)' : 'translateZ(8px)';
+    });
+  },
+  sphere: () => {
+    const r = 380;
+    ptr.rotateX = 40; ptr.rotateY = 360;
+    cards.forEach(($el, i) => {
+      const z0 = $el.classList.contains('is-expanded') ? 20 : 0;
+      const phi = Math.acos(-1 + (2*i)/cards.length);
+      const theta = Math.sqrt(cards.length * Math.PI) * phi;
+      const sp = Math.sin(phi);
+      const x = r * sp * Math.cos(theta);
+      const y = r * Math.cos(phi);
+      const z = r * sp * Math.sin(theta);
+      const yaw = Math.atan2(x, z);
+      const pitch = -Math.atan2(y, Math.hypot(x, z));
+      $el.style.transform = `translate3d(${x}px,${y}px,${z}px) rotateY(${yaw}rad) rotateX(${pitch}rad) translateZ(${z0}px)`;
+    });
+  },
+  helix: () => {
+    ptr.rotateX = 30; ptr.rotateY = 300;
+    const r = 380, step = 0.2, vs = 3.2;
+    const yOff = (cards.length * vs) / 2;
+    cards.forEach(($el, i) => {
+      const z0 = $el.classList.contains('is-expanded') ? 20 : 0;
+      const theta = i * step + Math.PI;
+      const y = -(i * vs) + yOff;
+      const x = r * Math.sin(theta);
+      const z = r * Math.cos(theta);
+      const yaw = Math.atan2(x, z);
+      const pitch = -Math.atan2(y, Math.hypot(x, z) * 2);
+      $el.style.transform = `translate3d(${x}px,${y}px,${z}px) rotateY(${yaw}rad) rotateX(${pitch}rad) translateZ(${z0}px)`;
+    });
+  },
+  grid: () => {
+    ptr.rotateX = 10; ptr.rotateY = 55;
+    const cols=4, rows=5, cg=200, rg=160, dg=180;
+    const per = cols * rows;
+    const layers = Math.ceil(cards.length / per);
+    cards.forEach(($el, i) => {
+      const z0 = $el.classList.contains('is-expanded') ? 20 : 0;
+      const col = i % cols;
+      const row = Math.floor(i / cols) % rows;
+      const layer = Math.floor(i / per);
+      const x = (col - (cols-1)/2) * cg;
+      const y = ((rows-1)/2 - row) * rg;
+      const z = z0 + ((layer - (layers-1)/2) * dg);
+      $el.style.transform = `translate3d(${x}px,${y}px,${z}px)`;
+    });
+  },
+  random: () => {
+    utils.set(cards, {
+      x: () => utils.random(-600, 600),
+      y: () => utils.random(-400, 400),
+      z: () => utils.random(-600, 600),
+    });
+  },
+};
+
+/* toggle buttons */
+const toggles = utils.$('.controls button.toggle');
+document.addEventListener('click', e => {
+  const $tog = e.target.closest('.controls button.toggle');
+  if($tog) {
+    toggles.forEach(b => b.classList.remove('is-active'));
+    $tog.classList.add('is-active');
+    const type = $tog.id;
+    elementsLayout.update(() => {
+      cards.forEach($el => $el.classList.remove('is-expanded'));
+      $content.dataset.layout = type;
+      layouts[type]();
+    }, { delay: stagger([0, 700], { from: 'random' }) });
+    return;
+  }
+  /* expand card */
+  const $card = e.target.closest('#scene-content .element');
+  const shouldExpand = $card && !$card.classList.contains('is-expanded');
+  elementsLayout.update(() => {
+    cards.forEach($el => $el.classList.remove('is-expanded'));
+    if(shouldExpand) $card.classList.add('is-expanded');
+    layouts[$content.dataset.layout]();
+  }, { ease: spring({ bounce: .2, duration: 380 }) });
+});
+
+document.addEventListener('keydown', e => {
+  if(e.key !== 'Escape') return;
+  if(!cards.some($el => $el.classList.contains('is-expanded'))) return;
+  elementsLayout.update(() => {
+    cards.forEach($el => $el.classList.remove('is-expanded'));
+    layouts[$content.dataset.layout]();
+  }, { ease: spring({ bounce: .3, duration: 380 }) });
+});
+
+/* ════════════════════════════════════════════════
+   INTRO ANIMATION
+════════════════════════════════════════════════ */
+layouts.random();
+utils.set(cards, { opacity: 0 });
+elementsLayout.update(() => layouts.table(), {
+  delay: stagger([0, 900], { from: 'random' })
+});
+
+/* ════════════════════════════════════════════════
+   CURSOR
+════════════════════════════════════════════════ */
+const cur = document.getElementById('cursor');
+const curR = document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove', e => {
+  mx=e.clientX; my=e.clientY;
+  cur.style.left=mx+'px'; cur.style.top=my+'px';
+});
+(function lr(){
+  rx+=(mx-rx)*.1; ry+=(my-ry)*.1;
+  curR.style.left=rx+'px'; curR.style.top=ry+'px';
+  requestAnimationFrame(lr);
+})();
+document.querySelectorAll('a,button,.element').forEach(el => {
+  el.addEventListener('mouseenter', () => { cur.style.width='16px'; cur.style.height='16px'; curR.style.width='46px'; curR.style.height='46px'; });
+  el.addEventListener('mouseleave', () => { cur.style.width='10px'; cur.style.height='10px'; curR.style.width='32px'; curR.style.height='32px'; });
+});
+
+</script>
+<script>
+/* ════════════════════════════════════════════════
+   MODAL (plain JS, outside module scope)
+════════════════════════════════════════════════ */
+const overlay = document.getElementById('modal-overlay');
+document.getElementById('open-request').addEventListener('click', () => overlay.classList.add('open'));
+document.getElementById('modal-close').addEventListener('click', () => overlay.classList.remove('open'));
+overlay.addEventListener('click', e => { if(e.target === overlay) overlay.classList.remove('open'); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') overlay.classList.remove('open'); });
+
+function submitRequest(e) {
+  e.preventDefault();
+  const form = e.target;
+  const required = form.querySelectorAll('[required]');
+  let valid = true;
+  required.forEach(f => {
+    if(!f.value.trim()){ f.style.borderColor='#ff2244'; valid=false; }
+    else { f.style.borderColor='rgba(0,200,255,.12)'; }
+  });
+  if(!valid) return;
+  document.getElementById('modal-form-wrap').style.display='none';
+  document.getElementById('modal-success').style.display='block';
+}
+</script>
+</body>
+</html>
